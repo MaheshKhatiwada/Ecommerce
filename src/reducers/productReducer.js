@@ -3,17 +3,21 @@ const initialState={
     products:[],
 }
 
-const productReducer=(state=initialState,action)=>{
+export const productReducer=(state=initialState,action)=>{
     switch(action.type){
         case SET_PRODUCTS:{
             return {...state,products:action.payload}
-        }
-        case SET_SELECTED_PRODUCT:{
-            return state;
         }
         default:
             return state;
     }
 }
 
-export default productReducer;
+export const selectedProductReducer=(state={},action)=>{
+    switch (action.type) {
+        case SET_SELECTED_PRODUCT:{
+            return {...state,...action.payload}
+        }
+        default:
+            return state;
+}}
