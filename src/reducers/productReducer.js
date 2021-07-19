@@ -1,4 +1,4 @@
-import { SET_PRODUCTS, SET_SELECTED_PRODUCT } from '../actions/constants';
+import { SET_PRODUCTS, SET_SELECTED_PRODUCT,REMOVE_SELECTED_PRODUCT } from '../actions/constants';
 const initialState={
     products:[],
 }
@@ -17,6 +17,9 @@ export const selectedProductReducer=(state={},action)=>{
     switch (action.type) {
         case SET_SELECTED_PRODUCT:{
             return {...state,...action.payload}
+        }
+        case REMOVE_SELECTED_PRODUCT:{
+            return {}
         }
         default:
             return state;
